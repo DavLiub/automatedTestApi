@@ -24,7 +24,3 @@ class Random_json():
             }
         }
         return random_json
-
-# Пример использования
-random_json_data = Random_json.json_for_create_new_expense()
-print(json.dumps(random_json_data, indent=2))

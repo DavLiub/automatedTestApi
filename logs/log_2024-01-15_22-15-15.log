@@ -1,0 +1,684 @@
+
+Test: tests/test_create_expense.py::Test_create_new_expense::test_create_new_expense (call)
+Time: 2024-01-15 22:15:15.951987
+Request method: POST
+Request URL: http://localhost:8000/v1/expense
+Request body: {'expense': {'amount': '100', 'category': 'category', 'description': 'description', 'id': 0, 'uid': 'fc4c2e4c-ef39-4980-8cef-f986527bb4c8', 'created_at': '2024-01-13T15:50:40.752Z'}}
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_create_expense.py::Test_create_new_expense::test_create_new_expense2 (call)
+Time: 2024-01-15 22:15:18.677951
+Request method: POST
+Request URL: http://localhost:8000/v1/expense
+Request body: None
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_create_expense.py::Test_create_new_expense::test_create_incomplete_json (call)
+Time: 2024-01-15 22:15:19.018307
+Request method: POST
+Request URL: http://localhost:8000/v1/expense
+Request body: {'expense': {'amount': '100', 'id': 0, 'uid': 'f8ce4c74-86fd-4756-aa38-923a774cd91b'}}
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_delete_expense.py::Test_delete_expense::test_status_code (call)
+Time: 2024-01-15 22:15:19.258113
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":15,"current_count":15,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":9,"uid":"f5fe2e61-e71a-4d2a-a509-7272e14adcbb","created_at":"2023-12-09T09:09:09.000090Z","category":"foo","description":"This is another foo","amount":"155.0"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2531', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_delete_expense.py::Test_delete_expense::test_status_code (call)
+Time: 2024-01-15 22:15:19.425094
+Request method: DELETE
+Request URL: http://localhost:8000/v1/expense/f5fe2e61-e71a-4d2a-a509-7272e14adcbb
+Request body: None
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Not Found"}
+Response headers: {'content-length': '62', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_delete_expense.py::Test_delete_expense::test_delete_nonexistent_uid (call)
+Time: 2024-01-15 22:15:19.467772
+Request method: DELETE
+Request URL: http://localhost:8000/v1/expense/333
+Request body: None
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_delete_expense.py::Test_delete_expense::test_expenses_tokens_nonexistent_uid (call)
+Time: 2024-01-15 22:15:19.489613
+Request method: DELETE
+Request URL: http://localhost:8000/v1/expense/333
+Request body: None
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_status_code (call)
+Time: 2024-01-15 22:15:19.593822
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_status_code (call)
+Time: 2024-01-15 22:15:20.146059
+Request method: GET
+Request URL: http://localhost:8000/v1/expense/c76a184b-e891-4649-ae18-e5d90d1ee8cb
+Request body: None
+
+Response code: 200
+Response text: {"expense":{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"}}
+Response headers: {'content-length': '179', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_count (call)
+Time: 2024-01-15 22:15:20.354571
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_count (call)
+Time: 2024-01-15 22:15:20.463359
+Request method: GET
+Request URL: http://localhost:8000/v1/expense/95d9f9cb-58c1-4867-b8fd-afc938391b61
+Request body: None
+
+Response code: 200
+Response text: {"expense":{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"}}
+Response headers: {'content-length': '172', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_tokens (call)
+Time: 2024-01-15 22:15:20.517020
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_tokens (call)
+Time: 2024-01-15 22:15:20.556613
+Request method: GET
+Request URL: http://localhost:8000/v1/expense/d14c2824-1c41-496e-9078-a588320619ab
+Request body: None
+
+Response code: 200
+Response text: {"expense":{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"}}
+Response headers: {'content-length': '174', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_nonexistent_uid (call)
+Time: 2024-01-15 22:15:20.600580
+Request method: GET
+Request URL: http://localhost:8000/v1/expense/333
+Request body: None
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_expense.py::Test_get_expense::test_expenses_tokens_nonexistent_uid (call)
+Time: 2024-01-15 22:15:20.609550
+Request method: GET
+Request URL: http://localhost:8000/v1/expense/333
+Request body: None
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_valid_request::test_status_code (call)
+Time: 2024-01-15 22:15:20.622920
+Request method: GET
+Request URL: http://localhost:8000/v1/expense
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":10,"limit":10,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"}]}
+Response headers: {'content-length': '1719', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_valid_request::test_expenses_count (call)
+Time: 2024-01-15 22:15:20.726740
+Request method: GET
+Request URL: http://localhost:8000/v1/expense
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":10,"limit":10,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"}]}
+Response headers: {'content-length': '1719', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_valid_request::test_json_tokens (call)
+Time: 2024-01-15 22:15:20.863565
+Request method: GET
+Request URL: http://localhost:8000/v1/expense
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":10,"limit":10,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"}]}
+Response headers: {'content-length': '1719', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_normal (call)
+Time: 2024-01-15 22:15:20.933523
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=1
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":1,"limit":1,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"}]}
+Response headers: {'content-length': '240', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_0 (call)
+Time: 2024-01-15 22:15:20.984221
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_total (call)
+Time: 2024-01-15 22:15:20.992624
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_total (call)
+Time: 2024-01-15 22:15:20.999622
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=14
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":14,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2365', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_more (call)
+Time: 2024-01-15 22:15:21.063124
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_more (call)
+Time: 2024-01-15 22:15:21.122960
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=24
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":24,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2365', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_negative (call)
+Time: 2024-01-15 22:15:21.134915
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=-2
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":12,"limit":-2,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"}]}
+Response headers: {'content-length': '2044', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_less_negative_total (call)
+Time: 2024-01-15 22:15:21.372644
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_limit::test_limit_less_negative_total (call)
+Time: 2024-01-15 22:15:21.384636
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=-24
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":0,"limit":-24,"offset":0},"expenses":[]}
+Response headers: {'content-length': '82', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_normal (call)
+Time: 2024-01-15 22:15:21.395634
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_normal (call)
+Time: 2024-01-15 22:15:21.401636
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=8
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":6,"limit":10,"offset":8},"expenses":[{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '1077', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_0 (call)
+Time: 2024-01-15 22:15:21.438635
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_equal_total (call)
+Time: 2024-01-15 22:15:21.452636
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_equal_total (call)
+Time: 2024-01-15 22:15:21.635370
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=14
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":0,"limit":10,"offset":14},"expenses":[]}
+Response headers: {'content-length': '82', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_more_total (call)
+Time: 2024-01-15 22:15:21.922931
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_more_total (call)
+Time: 2024-01-15 22:15:21.932937
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=24
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":0,"limit":10,"offset":24},"expenses":[]}
+Response headers: {'content-length': '82', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_offset::test_offset_negative (call)
+Time: 2024-01-15 22:15:21.946933
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=-4
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":0,"limit":10,"offset":-4},"expenses":[]}
+Response headers: {'content-length': '82', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_invalid_request::test_status_code (call)
+Time: 2024-01-15 22:15:21.956822
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=5.4
+Request body: None
+
+Response code: 500
+Response text: {"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Response headers: {'content-length': '136', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_invalid_request::test_status_code (call)
+Time: 2024-01-15 22:15:22.019750
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?limit=5a4
+Request body: None
+
+Response code: 500
+Response text: {"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Response headers: {'content-length': '136', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_invalid_request::test_status_code (call)
+Time: 2024-01-15 22:15:22.175895
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=5.4
+Request body: None
+
+Response code: 500
+Response text: {"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Response headers: {'content-length': '136', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_get_list.py::Test_get_expense_list_invalid_request::test_status_code (call)
+Time: 2024-01-15 22:15:22.182891
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=5a4
+Request body: None
+
+Response code: 500
+Response text: {"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Response headers: {'content-length': '136', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_status_code (call)
+Time: 2024-01-15 22:15:22.204730
+Request method: GET
+Request URL: http://localhost:8000/v1/summary
+Request body: None
+
+Response code: 200
+Response text: {"summary":{"start_date":"2023-12-01","end_date":"2024-01-05","total":"630.95","num_transactions":14}}
+Response headers: {'content-length': '102', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_summary_tokens (call)
+Time: 2024-01-15 22:15:22.214738
+Request method: GET
+Request URL: http://localhost:8000/v1/summary
+Request body: None
+
+Response code: 200
+Response text: {"summary":{"start_date":"2023-12-01","end_date":"2024-01-05","total":"630.95","num_transactions":14}}
+Response headers: {'content-length': '102', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_summary_num_transactions (call)
+Time: 2024-01-15 22:15:22.365480
+Request method: GET
+Request URL: http://localhost:8000/v1/summary
+Request body: None
+
+Response code: 200
+Response text: {"summary":{"start_date":"2023-12-01","end_date":"2024-01-05","total":"630.95","num_transactions":14}}
+Response headers: {'content-length': '102', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_summary_num_transactions (call)
+Time: 2024-01-15 22:15:23.088660
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_summary_total_value (call)
+Time: 2024-01-15 22:15:23.096663
+Request method: GET
+Request URL: http://localhost:8000/v1/summary
+Request body: None
+
+Response code: 200
+Response text: {"summary":{"start_date":"2023-12-01","end_date":"2024-01-05","total":"630.95","num_transactions":14}}
+Response headers: {'content-length': '102', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_summary_expense.py::Test_get_summary::test_summary_total_value (call)
+Time: 2024-01-15 22:15:23.182779
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code (call)
+Time: 2024-01-15 22:15:23.246481
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"lunch","description":"Burger and fries","amount":"16.00"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2364', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code (call)
+Time: 2024-01-15 22:15:23.253492
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/9e3d4d48-e241-4795-8ae0-5a86e11ff0d8
+Request body: {'amount': '100', 'category': 'changed78', 'description': 'changed64'}
+
+Response code: 200
+Response text: {"expense":{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"changed78","description":"changed64","amount":"100"}}
+Response headers: {'content-length': '172', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_values (call)
+Time: 2024-01-15 22:15:23.263497
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"changed78","description":"changed64","amount":"100"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"beverage","description":"Coffee for the new year","amount":"2.50"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2359', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_values (call)
+Time: 2024-01-15 22:15:23.333490
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/49d7950f-24bc-4d9a-8560-39f456b2333a
+Request body: {'amount': '100', 'category': 'changed78', 'description': 'changed64'}
+
+Response code: 200
+Response text: {"expense":{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"changed78","description":"changed64","amount":"100"}}
+Response headers: {'content-length': '173', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_nonexistent_uid (call)
+Time: 2024-01-15 22:15:23.341498
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/333
+Request body: {'amount': '100', 'category': 'changed78', 'description': 'changed64'}
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_tokens_nonexistent_uid (call)
+Time: 2024-01-15 22:15:23.584144
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/333
+Request body: {'amount': '100', 'category': 'changed78', 'description': 'changed64'}
+
+Response code: 404
+Response text: {"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Response headers: {'content-length': '92', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code_invalid_request (call)
+Time: 2024-01-15 22:15:23.766799
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"changed78","description":"changed64","amount":"100"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"changed78","description":"changed64","amount":"100"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2345', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code_invalid_request (call)
+Time: 2024-01-15 22:15:23.776332
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/736bc2d7-f886-404e-8674-d98c271204e5
+Request body: None
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_tokens_invalid_request (call)
+Time: 2024-01-15 22:15:23.785297
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"changed78","description":"changed64","amount":"100"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"changed78","description":"changed64","amount":"100"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2345', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_expenses_tokens_invalid_request (call)
+Time: 2024-01-15 22:15:23.793293
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/5e3d4d48-e241-4795-8ae0-5a86e11ff0d8
+Request body: None
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code_invalid_json (call)
+Time: 2024-01-15 22:15:23.811294
+Request method: GET
+Request URL: http://localhost:8000/v1/expense?offset=0&limit=0
+Request body: None
+
+Response code: 200
+Response text: {"meta":{"total_count":14,"current_count":14,"limit":0,"offset":0},"expenses":[{"id":1,"uid":"95d9f9cb-58c1-4867-b8fd-afc938391b61","created_at":"2023-12-01T01:01:01.000010Z","category":"foo","description":"This is a foo","amount":"155.0"},{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"},{"id":3,"uid":"c76a184b-e891-4649-ae18-e5d90d1ee8cb","created_at":"2023-12-03T03:03:03.000030Z","category":"bar","description":"This is another bar","amount":"137.15"},{"id":4,"uid":"5e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-04T04:04:04.000040Z","category":"beverage","description":"Coffee","amount":"2.50"},{"id":5,"uid":"9a089bc3-aca2-418e-9adf-4fdc922745c8","created_at":"2023-12-05T05:05:05.000050Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":6,"uid":"af81bce5-55a3-4284-b37e-8bc3bb2a164f","created_at":"2023-12-06T06:06:06.000060Z","category":"beverage","description":"Tea","amount":"1.50"},{"id":7,"uid":"49088bff-de27-4be3-aef7-defb325ee954","created_at":"2023-12-07T07:07:07.000070Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":8,"uid":"9e3d4d48-e241-4795-8ae0-5a86e11ff0d8","created_at":"2023-12-08T08:08:08.000080Z","category":"changed78","description":"changed64","amount":"100"},{"id":10,"uid":"c17eff16-334a-497f-8e28-f8c0a4ed3754","created_at":"2023-12-10T10:10:10.000100Z","category":"bar","description":"This is again another bar","amount":"137.15"},{"id":11,"uid":"49d7950f-24bc-4d9a-8560-39f456b2333a","created_at":"2024-01-01T01:01:01.000010Z","category":"changed78","description":"changed64","amount":"100"},{"id":12,"uid":"d14c2824-1c41-496e-9078-a588320619ab","created_at":"2024-01-02T02:02:02.000020Z","category":"beverage","description":"Coffee x 2","amount":"5.00"},{"id":13,"uid":"736bc2d7-f886-404e-8674-d98c271204e5","created_at":"2024-01-03T03:03:03.000030Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":14,"uid":"90fe26f0-599f-42bf-afd8-710b1dc461d4","created_at":"2024-01-04T04:04:04.000040Z","category":"lunch","description":"A big salad","amount":"14.00"},{"id":15,"uid":"b92b94ac-e1b1-47b6-88be-fcfdb8b09623","created_at":"2024-01-05T05:05:05.000050Z","category":"beverage","description":"Coffee","amount":"2.50"}]}
+Response headers: {'content-length': '2345', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
+
+Test: tests/test_update_expense.py::Test_update_expense::test_status_code_invalid_json (call)
+Time: 2024-01-15 22:15:23.836066
+Request method: PUT
+Request URL: http://localhost:8000/v1/expense/5e3d4d48-e241-4795-8ae0-5a86e11ff0d8
+Request body: {'amount': '157', 'category': 0, 'description': 'changed'}
+
+Response code: 400
+Response text: {"description":"Bad Request","status":400,"message":"Incorrect body was sent"}
+Response headers: {'content-length': '78', 'connection': 'keep-alive', 'content-type': 'application/json'}
+Response cookies: {}
+
