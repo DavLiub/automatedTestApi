@@ -158,23 +158,28 @@ This section provides instructions on running tests using Pytest and generating 
 #### Methods:
 
 <table>
-    <tr>
-        <th>Methods</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>setup_logger(log_file)</td>
-        <td>Configures the logger with the specified log file</td>
-    </tr>
-    <tr>
-        <td>log_info(message)</td>
-        <td>Logs informational messages</td>
-    </tr>
-	<tr>
-		<td>log_error(message)</td>
-		<td>Logs error messages</td>
-	</tr>
+    <thead>
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>write_log_to_file(data: str)</code></td>
+            <td>Writes the provided data to the log file.</td>
+        </tr>
+        <tr>
+            <td><code>add_request(url: str, method: str, body=None)</code></td>
+            <td>Adds a log entry for a request. Includes information about the time, method, URL, and request body.</td>
+        </tr>
+        <tr>
+            <td><code>add_response(result: Response)</code></td>
+            <td>Adds a log entry for a response. Includes information about the response code, response text, headers, and cookies.</td>
+        </tr>
+    </tbody>
 </table>
+
 
 ### 5. test_create_expense.py
 #### This test file contains methods to test the creation of expense entries.
