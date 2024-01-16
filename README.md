@@ -67,105 +67,339 @@ This section provides instructions on running tests using Pytest and generating 
 #### This file contains utility methods for checking various aspects of API responses.
 
 #### Methods:
-check_status_code(response, expected_code)
-Verifies if the response status code matches the expected code.
 
-check_json_token(response, expected_tokens)
-Checks if the JSON response contains the expected tokens.
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>check_status_code(response, expected_code)</td>
+        <td>Verifies if the response status code matches the expected code</td>
+    </tr>
+    <tr>
+        <td>check_json_token(response, expected_tokens)</td>
+        <td>Checks if the JSON response contains the expected tokens</td>
+    </tr>
+</table>
+
 
 ### 2. utils/api.py
 #### This file encapsulates methods for interacting with the expense API.
 
 #### Methods:
-get_expense_list(limit=None, offset=None): Gets the list of expenses with optional limit and offset parameters.
-get_expense_details(uid): Gets details for a specific expense identified by its UID.
-get_total_count_from_list(): Gets the total count of expenses from the expense list.
-post_create_expense(json_data): Creates a new expense with the provided JSON data.
-put_update_expense(uid, json_data): Updates an existing expense identified by its UID with the provided JSON data.
-delete_expense(uid): Deletes an expense identified by its UID.
-get_summary_expense(): Gets a summary of expenses.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>get_expense_list(limit=None, offset=None)</td>
+        <td>Gets the list of expenses with optional limit and offset parameters.</td>
+    </tr>
+    <tr>
+        <td>get_expense_details(uid)</td>
+        <td>Gets details for a specific expense identified by its UID</td>
+    </tr>
+	<tr>
+		<td>get_total_count_from_list()</td>
+		<td>Gets the total count of expenses from the expense list</td>
+	</tr>
+	<tr>
+		<td>post_create_expense(json_data)</td>
+		<td>Creates a new expense with the provided JSON data</td>
+	</tr>
+	<tr>
+		<td>put_update_expense(uid, json_data)</td>
+		<td>Updates an existing expense identified by its UID with the provided JSON data</td>
+	</tr>
+	<tr>
+		<td>delete_expense(uid)</td>
+		<td>Deletes an expense identified by its UID</td>
+	</tr>
+	<tr>
+		<td>get_summary_expense()</td>
+		<td>Gets a summary of expenses</td>
+	</tr>
+</table>
 
 ### 3. utils/http_method.py
 #### Contains methods for making HTTP requests.
 
 #### Methods:
-send_get_request(url, params=None): Sends a GET request to the specified URL with optional parameters.
-send_post_request(url, json_data): Sends a POST request to the specified URL with JSON data.
-send_put_request(url, json_data): Sends a PUT request to the specified URL with JSON data.
-send_delete_request(url): Sends a DELETE request to the specified URL.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>send_get_request(url, params=None)</td>
+        <td>Sends a GET request to the specified URL with optional parameters</td>
+    </tr>
+    <tr>
+        <td>send_post_request(url, json_data)</td>
+        <td>Sends a POST request to the specified URL with JSON data</td>
+    </tr>
+	<tr>
+		<td>send_put_request(url, json_data)</td>
+		<td>Sends a PUT request to the specified URL with JSON data</td>
+	</tr>
+	<tr>
+		<td>send_delete_request(url)</td>
+		<td>Sends a DELETE request to the specified URL</td>
+	</tr>
+</table>
 
 ### 4. utils/logger.py
 #### Provides logging functionality for the project.
 
 #### Methods:
-setup_logger(log_file): Configures the logger with the specified log file.
-log_info(message): Logs informational messages.
-log_error(message): Logs error messages.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>setup_logger(log_file)</td>
+        <td>Configures the logger with the specified log file</td>
+    </tr>
+    <tr>
+        <td>log_info(message)</td>
+        <td>Logs informational messages</td>
+    </tr>
+	<tr>
+		<td>log_error(message)</td>
+		<td>Logs error messages</td>
+	</tr>
+</table>
 
 ### 5. test_create_expense.py
 #### This test file contains methods to test the creation of expense entries.
 
 #### Test Methods:
-test_status_code: Checks the response status code after creating a new expense.
-test_expenses_values: Checks if the received UID, amount, category, and description match the expected values.
-test_expenses_tokens_invalid_request: Checks error tokens for an invalid request.
-test_status_code_invalid_json: Checks the response status code for an invalid JSON in the request.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after creating a new expense</td>
+    </tr>
+    <tr>
+        <td>test_expenses_values</td>
+        <td>Checks if the received UID, amount, category, and description match the expected values</td>
+    </tr>
+	<tr>
+		<td>test_expenses_tokens_invalid_request</td>
+		<td>Checks error tokens for an invalid request</td>
+	</tr>
+	<tr>
+		<td>test_status_code_invalid_json</td>
+		<td>Checks the response status code for an invalid JSON in the request</td>
+	</tr>
+</table>
 
 ### 6. test_delete_expense.py
 #### This test file contains methods to test the deletion of expense entries.
 
 #### Test Methods:
-test_status_code: Checks the response status code after deleting an expense.
-test_expenses_tokens_nonexistent_uid: Checks tokens for a nonexistent UID.
-test_status_code_invalid_request: Checks the response status code for an invalid request.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after deleting an expense</td>
+    </tr>
+    <tr>
+        <td>test_expenses_tokens_nonexistent_uid</td>
+        <td>Checks tokens for a nonexistent UID</td>
+    </tr>
+	<tr>
+		<td>test_status_code_invalid_request</td>
+		<td>Checks the response status code for an invalid request</td>
+	</tr>
+</table>
 
 ### 7. test_get_expense.py
 #### This test file contains methods to test the retrieval of expense details.
 
 #### Test Methods:
-test_status_code: Checks the response status code after getting expense details.
-test_expenses_tokens_nonexistent_uid: Checks tokens for a nonexistent UID.
-test_status_code_invalid_request: Checks the response status code for an invalid request.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after getting expense details</td>
+    </tr>
+    <tr>
+        <td>test_expenses_tokens_nonexistent_uid</td>
+        <td>Checks tokens for a nonexistent UID</td>
+    </tr>
+	<tr>
+		<td>test_status_code_invalid_request</td>
+		<td>Checks the response status code for an invalid request</td>
+	</tr>
+</table>
 
 ### 8. test_get_list.py
 #### This test file contains methods to test the retrieval of expense lists.
 
 #### Test Methods:
-test_status_code: Checks the response status code after getting the expense list.
-test_expenses_count: Checks the count of expenses in the list.
-test_json_tokens: Checks JSON tokens in the response.
-test_limit_normal: Checks the response when the limit is between 0 and total_count.
-test_limit_0: Checks the response when the limit is 0.
-test_limit_total: Checks the response when the limit is total_count.
-test_limit_more: Checks the response when the limit is greater than total_count.
-test_limit_negative: Checks the response when the limit is negative.
-test_limit_less_negative_total: Checks the response when the limit is less than negative total_count.
-test_offset_normal: Checks the response when the offset is between 0 and total_count.
-test_offset_0: Checks the response when the offset is 0.
-test_offset_equal_total: Checks the response when the offset is equal to total_count.
-test_offset_more_total: Checks the response when the offset is greater than total_count.
-test_offset_negative: Checks the response when the offset is negative.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after getting the expense list</td>
+    </tr>
+    <tr>
+        <td>test_expenses_count</td>
+        <td>Checks the count of expenses in the list</td>
+    </tr>
+	<tr>
+		<td>test_json_tokens</td>
+		<td>Checks JSON tokens in the response</td>
+	</tr>
+	<tr>
+		<td>test_limit_normal</td>
+		<td>Checks the response when the limit is between 0 and total_count</td>
+	</tr>
+	<tr>
+		<td>test_limit_0</td>
+		<td>Checks the response when the limit is 0</td>
+	</tr>
+	<tr>
+		<td>test_limit_total</td>
+		<td>Checks the response when the limit is total_count</td>
+	</tr>
+	<tr>
+		<td>test_json_tokens</td>
+		<td>Checks JSON tokens in the response</td>
+	</tr>
+	<tr>
+		<td>test_limit_more</td>
+		<td>Checks the response when the limit is greater than total_count</td>
+	</tr>
+	<tr>
+		<td>test_limit_negative</td>
+		<td>Checks the response when the limit is negative</td>
+	</tr>
+	<tr>
+		<td>test_limit_less_negative_total</td>
+		<td>Checks the response when the limit is less than negative total_count</td>
+	</tr>
+	<tr>
+		<td>test_limit_total</td>
+		<td>Checks the response when the limit is total_count</td>
+	</tr>
+	<tr>
+		<td>test_offset_normal</td>
+		<td>Checks the response when the offset is between 0 and total_count</td>
+	</tr>
+	<tr>
+		<td>test_offset_0</td>
+		<td>Checks the response when the offset is 0</td>
+	</tr>
+	<tr>
+		<td>test_offset_equal_total</td>
+		<td>Checks the response when the offset is equal to total_count</td>
+	</tr>
+	<tr>
+		<td>test_offset_more_total</td>
+		<td>Checks the response when the offset is greater than total_count</td>
+	</tr>
+	<tr>
+		<td>test_offset_negative</td>
+		<td>Checks the response when the offset is negative</td>
+	</tr>
+</table>
 
 ### 9. test_summary_expense.py
 #### This test file contains methods to test the retrieval of expense summaries.
 
 #### Test Methods:
-test_status_code: Checks the response status code after getting the summary.
-test_summary_tokens: Checks JSON tokens in the response.
-test_summary_num_transactions: Checks if num_transactions is equal to the total_count.
-test_summary_total_value: Checks if the total sum is correct.
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after getting the summary</td>
+    </tr>
+    <tr>
+        <td>test_summary_tokens</td>
+        <td>Checks JSON tokens in the response</td>
+    </tr>
+	<tr>
+		<td>test_summary_num_transactions</td>
+		<td>Checks if num_transactions is equal to the total_count</td>
+	</tr>
+	<tr>
+		<td>test_summary_total_value</td>
+		<td>Checks if the total sum is correct</td>
+	</tr>
+</table>
 
 ### 10. test_update_expense.py
 #### This test file contains methods to test the update of expense entries.
 
 #### Test Methods:
-test_status_code: Checks the response status code after updating an expense.
-test_expenses_values: Checks if the received UID, amount, category, and description match the expected values.
-test_expenses_nonexistent_uid: Checks the response status code for updating an expense with a nonexistent UID.
-test_expenses_tokens_nonexistent_uid: Checks tokens for updating an expense with a nonexistent UID.
-test_status_code_invalid_request: Checks the response status code for an invalid request.
-test_expenses_tokens_invalid_request: Checks tokens for an invalid request.
-test_status_code_invalid_json: Checks the response status code for an invalid JSON in the request.
+
+
+<table>
+    <tr>
+        <th>Methods</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>test_status_code</td>
+        <td>Checks the response status code after updating an expense</td>
+    </tr>
+    <tr>
+        <td>test_expenses_values</td>
+        <td>Checks if the received UID, amount, category, and description match the expected values</td>
+    </tr>
+	<tr>
+		<td>test_expenses_nonexistent_uid</td>
+		<td>Checks the response status code for updating an expense with a nonexistent UID</td>
+	</tr>
+	<tr>
+		<td>test_expenses_tokens_nonexistent_uid</td>
+		<td>Checks tokens for updating an expense with a nonexistent UID</td>
+	</tr>
+    <tr>
+        <td>test_status_code_invalid_request</td>
+        <td>Checks the response status code for an invalid request</td>
+    </tr>
+    <tr>
+        <td>test_expenses_tokens_invalid_request</td>
+        <td>Checks if the received UID, amount, category, and description match the expected values</td>
+    </tr>
+	<tr>
+		<td>test_expenses_nonexistent_uid</td>
+		<td>Checks tokens for an invalid request</td>
+	</tr>
+	<tr>
+		<td>test_status_code_invalid_json</td>
+		<td>Checks the response status code for an invalid JSON in the request</td>
+	</tr>
+</table>
 
 ## Explanation of .log Files
 The .log files contain logs generated during the execution of the tests. These logs capture information and errors, providing insights into the test execution process. The log files are named based on their purpose or the test file they correspond to. Log files are helpful for debugging and understanding the flow of test execution.
