@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "allure-commandline": "^2.25.0"
+  },
+  "dependencies": {
+    "k6": "^0.0.0"
   }
 }

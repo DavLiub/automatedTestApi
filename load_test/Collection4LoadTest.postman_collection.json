@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "1083307b-0188-4ce1-a20d-486d5fc60368",
+		"name": "Collection4LoadTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22581092"
+	},
+	"item": [
+		{
+			"name": "Get expense (200 OK)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": \"00245607826611911348728974\",\r\n  \"category\": \"changed\",\r\n  \"description\": \"changed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/expense/49088bff-de27-4be3-aef7-defb325ee954",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"expense",
+						"49088bff-de27-4be3-aef7-defb325ee954"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"description": "expense_uid - REQUIRED",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Summary (200 OK)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"amount\": \"00245607826611911348728974\",\r\n  \"category\": \"changed\",\r\n  \"description\": \"changed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/expense/49088bff-de27-4be3-aef7-defb325ee954",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"expense",
+						"49088bff-de27-4be3-aef7-defb325ee954"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"description": "expense_uid - REQUIRED",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Expenses (200 OK)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/expense?limit=10&offset=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"expense"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
