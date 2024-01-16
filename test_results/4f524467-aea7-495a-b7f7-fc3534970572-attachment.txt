@@ -1,0 +1,4 @@
+http://localhost:8000/v1/expense
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Bad Request","status":400,"message":"Incorrect body was sent"}

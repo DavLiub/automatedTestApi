@@ -1,0 +1,5 @@
+http://localhost:8000/v1/summary
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"summary":{"start_date":"2023-12-02","end_date":"2024-01-05","total":"657.45","num_transactions":13}}
+Success! All required fields are present

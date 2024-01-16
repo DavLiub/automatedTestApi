@@ -1,0 +1,20 @@
+http://localhost:8000/v1/expense?limit=5.4
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Success! Status code (500) is correct
+http://localhost:8000/v1/expense?limit=5a4
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Success! Status code (500) is correct
+http://localhost:8000/v1/expense?offset=5.4
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Success! Status code (500) is correct
+http://localhost:8000/v1/expense?offset=5a4
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Internal Server Error","status":500,"message":"The application encountered an unexpected error and could not continue."}
+Success! Status code (500) is correct

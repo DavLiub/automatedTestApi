@@ -1,0 +1,5 @@
+http://localhost:8000/v1/expense?offset=-4
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"meta":{"total_count":13,"current_count":0,"limit":10,"offset":-4},"expenses":[]}
+Success! List is empty.

@@ -1,0 +1,6 @@
+http://localhost:8000/v1/expense?limit=1
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"meta":{"total_count":13,"current_count":1,"limit":1,"offset":0},"expenses":[{"id":2,"uid":"af8d198c-3ef0-4ab8-a565-eb31d23325f3","created_at":"2023-12-02T02:02:02.000020Z","category":"bar","description":"This is a bar","amount":"137.15"}]}
+Success! Status code (200) is correct
+Success! Count of expenses in the list = limit.

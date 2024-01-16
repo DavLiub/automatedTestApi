@@ -1,0 +1,5 @@
+http://localhost:8000/v1/expense/333
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+D:\TestOpenApi\logs\log_2024-01-15_23-33-36.log
+{"description":"Not Found","status":404,"message":"Requested URL /v1/expense/333 not found"}
+Success! Status code (404) is correct
